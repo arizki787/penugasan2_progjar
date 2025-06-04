@@ -10,7 +10,7 @@ def handle_client(conn, addr):
             if not data:
                 break
             
-            request = data.decode('utf-8').strip()
+            request = data.decode('utf-8')
             print(f"Menerima request: {repr(request)}")
             
             if request.startswith("TIME") and request.endswith("\r\n"):

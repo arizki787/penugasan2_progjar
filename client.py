@@ -1,4 +1,5 @@
 import socket
+import time
 
 def send_request(request):
     host = 'localhost'
@@ -11,6 +12,12 @@ def send_request(request):
         print(f"Response: {repr(response.decode('utf-8'))}")
 
 if __name__ == "__main__":
-    # Contoh penggunaan
+    # Get current time
+    print("Sending TIME request...")
     send_request("TIME\r\n")
+    
+    time.sleep(1)
+    
+    # Quit the connection
+    print("Sending QUIT request...")
     send_request("QUIT\r\n")
